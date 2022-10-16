@@ -1,0 +1,147 @@
+.root{
+  padding: 48px 40px 96px 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  &::before{
+    filter: drop-shadow(10px 0px 20px rgba(48, 62, 245, 0.15));
+    content: "";
+    width: 100%;
+    height: 100%;
+    /* background-position: -180px 0px; */
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: block;
+    background: url('../../../public/images/sidebar-shape.svg') center center no-repeat;
+    background-size: 100% 100%;
+  }
+  .open{
+    cursor: pointer;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(48, 62, 245, 0.05);
+    border-radius: 101px;
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    border: none;
+    top: 127px;
+    right: -25px;
+    width: 48px;
+    height: 48px;
+    .icon{
+      margin-top: 5px;
+    }
+  }
+
+  &_closed{
+
+  }
+}
+
+.logo{
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 142px;
+  &__text{
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 29px;
+    color: #1A202C;
+  }
+  &__image{
+    margin-right: 30px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.menu{
+  position: relative;
+  .list{
+    li{
+      margin-bottom: 25px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    .item{
+      text-decoration: none;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+      &_active{
+
+        .icon{
+          background: #EAECFE;
+          position: relative;
+          &::before{
+            content: '';
+            position: absolute;
+            display: block;
+            right: -8px;
+            top: 7.5px;
+            background: url('../../../public/icons/menu-connect-items.svg');
+            width: 13px;
+            height: 20px;
+        }
+        }
+        .text{
+          background: #EAECFE;
+          color: #303EF5 !important;
+          border-radius: 11px;
+        }
+      }
+      .icon {
+        border-radius: 11px;
+        width: 38px;
+        height: 38px;
+        margin-right: 8px;
+        padding: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+      .text{
+        padding: 7px 15px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #A09AA7;
+      }
+    }
+  }
+}
+
+.socials{
+  position: relative;
+  padding-top: 25px;
+  border-top: 1.50012px solid #EAECFE;
+  .item{
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .image{
+      padding: 7px;
+      margin-right: 23px; 
+    }
+    .text{
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: #A09AA7;
+    }
+  }
+}
