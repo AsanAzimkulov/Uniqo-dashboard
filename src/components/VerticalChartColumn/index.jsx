@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
+import ChartCustomTooltip from '../ChartCustomTooltip';
 import styles from './index.module.scss';
 
 const VerticalChartItem = ({ label, value, percentage }) => {
@@ -9,11 +10,11 @@ const VerticalChartItem = ({ label, value, percentage }) => {
       className={classNames(styles.root, {
         [styles.root_active]: isActive,
       })}
-      onClick={() => setIsActive((prev) => !prev)}>
+      onMouseEnter={() => setIsActive(true)}
+      onMouseLeave={() => setIsActive(false)}>
       <div className={styles.scale} style={{ maxHeight: `${percentage}%` }}>
         <div className={styles.planc}>
-          <img src="./icons/verticalChartItemPlancIcon.svg" alt="Arrow up direction icon" className={styles.icon} />
-          <p className={styles.planc__value}>{value}</p>
+          <ChartCustomTooltip value={value} />
         </div>
       </div>
       <h4 className={styles.label}>{label}</h4>

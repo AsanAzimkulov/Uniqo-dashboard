@@ -4,17 +4,18 @@ import { Header } from '../../components/header';
 import classNames from 'classnames';
 import { Sidebar } from '../../components/sidebar';
 import { AppContext } from '../../contexts/AppContext';
+import { Outlet } from 'react-router';
 
-const MainLayout = ({ pageTitle, children, className }) => {
+const MainLayout = () => {
   const { isSidebarOpened, setIsSidebarOpened } = useContext(AppContext);
   return (
-    <div className={classNames(styles.layout, className)}>
+    <div className={styles.layout}>
       <div className={styles.left}>
         <Sidebar isOpened={isSidebarOpened} onToggle={() => setIsSidebarOpened((prev) => !prev)} />
       </div>
       <div className={styles.right}>
-        <Header title={pageTitle} />
-        <main className={styles.pageContent}>{children}</main>
+        <Header />
+        <main className={styles.pageContent}>{<Outlet />}</main>
       </div>
     </div>
   );

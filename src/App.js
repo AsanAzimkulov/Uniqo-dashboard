@@ -3,18 +3,26 @@ import { useState } from 'react';
 import { Home } from './pages/Home';
 import { Routes, Route } from 'react-router';
 import { Account } from './pages/account';
+import { MainLayout } from './layouts/MainLayout';
 
 
 function App() {
   const [isSidebarOpened, setIsSidebarOpened] = useState(true);
+  const pageNames = {
+    '/': 'Dashboard',
+    '/account': 'Account'
+  }
   return (
     <AppContext.Provider value={{
       isSidebarOpened,
-      setIsSidebarOpened
+      setIsSidebarOpened,
+      pageNames
     }}>
       <Routes>
-        <Route exact path={'/'} element={<Home />} />
-        <Route exact path={'/account'} element={<Account />} />
+        <Route path="/" element={<MainLayout />}>
+          <Route exact path={''} element={<Home />} />
+          <Route exact path={'account'} element={<Account />} />
+        </Route>
       </Routes>
     </AppContext.Provider >
   );

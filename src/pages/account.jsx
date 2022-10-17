@@ -3,9 +3,7 @@ import { MainLayout } from '../layouts/MainLayout';
 
 const Account = () => {
   return (
-    <MainLayout>
-      
-    </MainLayout>
+<div></div>
   );
 };
 

@@ -1,8 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './index.module.scss';
 import classNames from 'classnames';
+import { useLocation } from 'react-router';
+import { AppContext } from '../../contexts/AppContext';
 
-const Header = ({ title }) => {
+const Header = () => {
+  const {pageNames} = useContext(AppContext);
+  const {pathname: location} = useLocation();
+  const title = pageNames[location];
+
+
   return (
     <header className={styles.root}>
       <h1 className={styles.title}>{title}</h1>

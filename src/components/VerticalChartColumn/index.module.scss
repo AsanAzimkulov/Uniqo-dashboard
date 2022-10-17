@@ -15,24 +15,6 @@
         position: absolute;
         right: calc(50% - 1px);
         top: -20px;
-        // border: -2px solid transparent;
-        backdrop-filter: blur(2px);
-        padding: 7.5px 17px;
-        display: flex;
-        align-items: center;
-        background: url('../../../public/images/verticalChartItemPlankBg.svg') center center no-repeat;
-        background-size: 100% 100%;
-        .icon{
-          margin-right: 2px;
-        }
-
-        &__value{
-          font-weight: 600;
-          font-size: 12px;
-          line-height: 120%;
-          color: #303EF5;
-        }
-
       }
       &::after{
         content: '';
