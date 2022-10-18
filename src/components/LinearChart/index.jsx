@@ -301,7 +301,7 @@ const LinearChart = ({ labels, data, width, height, fullWidth = false }) => {
                 tooltipEl.style.left =
                   position.left + window.pageXOffset + tooltipModel.caretX - 96 + 'px'; // 88 - tooltip's width + 8
                 tooltipEl.style.top =
-                  position.top + window.pageYOffset + tooltipModel.caretY - 45 + 'px'; // 37 - tooltip's height + 8
+                  position.top + window.pageYOffset + tooltipModel.caretY - 44 + 'px'; // 37 - tooltip's height + 7
                 tooltipEl.style.font = bodyFont.string;
                 tooltipEl.style.padding =
                   tooltipModel.padding + 'px ' + tooltipModel.padding + 'px';

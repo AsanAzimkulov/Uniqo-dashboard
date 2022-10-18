@@ -23,6 +23,7 @@ const ChartCustomTooltip = ({ value, id, textId, absolute, variant = 1 }) => {
       <p className={styles.planc__value} id={textId}>
         {value}
       </p>
+      <div className={styles.blur}></div>
     </div>
   );
 };

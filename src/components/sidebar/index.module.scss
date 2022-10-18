@@ -144,6 +144,29 @@
       justify-content: flex-start;
       align-items: center;
       cursor: pointer;
+      &:hover{
+        .text{
+          background: #EAECFE;
+          border-radius: 11px;
+        }
+        .icon{
+          background: #EAECFE;
+          position: relative;
+          transition: none !important;
+          &::before{
+            opacity: 1;
+            content: '';
+            position: absolute;
+            display: block;
+            right: -10px;
+            top: 7.5px;
+            background: url('../../../public/icons/menu-connect-items.svg');
+            width: 13px;
+            height: 20px;
+          }
+        }
+      }
+      
       &_active{
 
         .icon{
@@ -154,7 +177,7 @@
             content: '';
             position: absolute;
             display: block;
-            right: -8px;
+            right: -10px;
             top: 7.5px;
             background: url('../../../public/icons/menu-connect-items.svg');
             width: 13px;
@@ -179,22 +202,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
-        &::before{
-          opacity: 1;
-          transition: opacity 140ms linear 300ms;
 
-          content: '';
-          position: absolute;
-          display: block;
-          right: -8px;
-          top: 7.5px;
-          background: url('../../../public/icons/menu-connect-items.svg');
-          width: 13px;
-          height: 20px;
-          opacity: 0;
-          transition: opacity 140ms ease-in 300ms;
-        }
 
       }
       .text{
@@ -205,6 +213,7 @@
         font-size: 16px;
         line-height: 24px;
         color: #A09AA7;
+        position: relative;
       }
     }
   }
