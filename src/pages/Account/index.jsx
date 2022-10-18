@@ -235,4 +235,4 @@ const Account = () => {
   );
 };
 
-export { Account };
+export const AccountPage = React.memo(Account);
