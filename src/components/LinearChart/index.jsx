@@ -14,9 +14,10 @@ import {
   Legend,
   Filler,
 } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+import { getElementAtEvent, Line } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import ChartCustomTooltip from '../../components/ChartCustomTooltip';
+import { useMyCallback } from '../../hooks/useMyCallback';
 
 ChartJS.register(
   CategoryScale,
@@ -50,25 +51,57 @@ ChartJS.register(
   },
 );
 
-const LinearChart = ({ labels, data, width, height }) => {
+const LinearChart = ({ labels, data, width, height, fullWidth = false }) => {
   const toolTipIdRef = useRef('id' + Math.random().toString(16).slice(2));
 
   const [gradientBG, setGradientBG] = useState(null);
 
+  const [chartConf, setChartConf] = useMyCallback({
+    xLabelColor: '#A09AA7',
+    pointsColor: fullWidth
+      ? Array(labels.length).fill('#3341F6')
+      : Array(labels.length).fill('transparent'),
+    pointsBorderColor: fullWidth
+      ? Array(labels.length).fill('rgba(234, 236, 254, 0.5)')
+      : Array(labels.length).fill('transparent'),
+  });
+
+  const onHoverOutside = () => {
+    if (!fullWidth) {
+      setChartConf({
+        xLabelColor: '#A09AA7',
+        pointsColor: fullWidth
+          ? Array(labels.length).fill('#3341F6')
+          : Array(labels.length).fill('transparent'),
+        pointsBorderColor: fullWidth
+          ? Array(labels.length).fill('rgba(234, 236, 254, 0.5)')
+          : Array(labels.length).fill('transparent'),
+      });
+    }
+  };
+
   const chartRef = useRef(null);
+
+  const onChartHover = (mousemove) => {
+    const chart = chartRef.current;
+    if (chart) {
+      const ctx = chart.ctx;
+    }
+  };
 
   useEffect(() => {
     const chart = chartRef.current;
-    console.log(chart.$context.chart);
 
     if (chart) {
       const ctx = chart.ctx;
-      const gradientBG = ctx.createLinearGradient(0, 0, 0, 400);
+      const gradientBG = ctx.createLinearGradient(0, 0, 0, 278);
 
       gradientBG.addColorStop(0.186, 'rgba(48, 62, 245, 0.5)');
       gradientBG.addColorStop(0.726, 'rgba(198, 201, 250, 0)');
 
       setGradientBG(gradientBG);
+      // console.log(chart._config.data.datasets[activeElement[0]._datasetIndex].data[activeElement[0]._index]);
+      console.log(chart);
     }
   }, []);
 
@@ -82,7 +115,9 @@ const LinearChart = ({ labels, data, width, height }) => {
   return (
     <>
       <Line
+        onMouseLeave={onHoverOutside}
         ref={chartRef}
+        onMouseMove={onChartHover}
         data={{
           labels,
           datasets: [
@@ -95,18 +130,67 @@ const LinearChart = ({ labels, data, width, height }) => {
               borderWidth: 1.91,
               fill: true,
               pointRadius: 6,
-              pointBackgroundColor: '#3341F6',
+              pointBackgroundColor: fullWidth ? '#3341F6' : chartConf.pointsColor,
               pointBorderWidth: 5,
-              pointBorderColor: 'rgba(234, 236, 254, 0.5)',
+              pointBorderColor: fullWidth
+                ? 'rgba(234, 236, 254, 0.5)'
+                : chartConf.pointsBorderColor,
               pointHoverBorderWidth: 5.5,
               pointHoverRadius: 6.5,
               pointHoverBorderColor: 'rgba(234, 236, 254, 0.5)',
+              pointHoverBackgroundColor: '#3341F6',
             },
           ],
         }}
         height={height || 400}
         width={width || 600}
         options={{
+          onHover: function (evt, element) {
+            if (element.length > 0) {
+              const defaultPointsColor = '#3341F6';
+              const defaultPointsBorderColor = 'rgba(234, 236, 254, 0.5)';
+
+              const defaultColor = '#A09AA7';
+              const activeColor = '#303EF5';
+              console.log(chartRef.current.config._config.options.scales.x.ticks.color);
+
+              if (chartRef.current.config._config.options.scales.x.ticks.color instanceof Array) {
+                chartRef.current.config._config.options.scales.x.ticks.color =
+                  chartRef.current.config._config.options.scales.x.ticks.color.fill(defaultColor);
+                chartRef.current.config._config.options.scales.x.ticks.color[element[0].index] =
+                  activeColor;
+              } else {
+                chartRef.current.config._config.options.scales.x.ticks.color = Array(
+                  chartRef.current.config._config.data.labels.length,
+                ).fill(defaultColor);
+
+                chartRef.current.config._config.options.scales.x.ticks.color[element[0].index] =
+                  activeColor;
+              }
+
+              if (!fullWidth) {
+                const newPointsColor = labels.map((x) => 'transparent');
+
+                newPointsColor[element[0].index] = defaultPointsColor;
+
+                const newPointsBorderColor = labels.map((x) => 'transparent');
+
+                newPointsBorderColor[element[0].index] = defaultPointsBorderColor;
+
+                setChartConf((conf) => ({
+                  ...conf,
+                  xLabelColor: chartRef.current.config._config.options.scales.x.ticks.color,
+                  pointsColor: newPointsColor,
+                  pointsBorderColor: newPointsBorderColor,
+                }));
+              } else {
+                setChartConf((conf) => ({
+                  ...conf,
+                  xLabelColor: chartRef.current.config._config.options.scales.x.ticks.color,
+                }));
+              }
+            }
+          },
           defaults: {
             global: {
               defaultFontFamily: 'THICCCBOI',
@@ -125,12 +209,11 @@ const LinearChart = ({ labels, data, width, height }) => {
                     color: 'black',
                   },
                 },
-                color: '#A09AA7',
+                color: chartConf.xLabelColor,
                 font: {
                   size: 11,
                   weight: 600,
                   family: 'THICCCBOI',
-                  color: '#A09AA7',
                 },
               },
             },

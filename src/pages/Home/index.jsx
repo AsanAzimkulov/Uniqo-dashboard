@@ -6,11 +6,9 @@ import VerticalChartItem from '../../components/VerticalChartColumn';
 import styles from './index.module.scss';
 import ChartModesPanel from '../../components/ChartModesPanel';
 import { Check } from '../../components/Check';
+import { randomIntFromInterval } from '../../utils/random';
 
-function randomIntFromInterval(min, max) {
-  // min and max included
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
+
 
 const Home = () => {
   const labels = new Array(7).fill(null).map((a, index) => `Jul ${18 + index}`);
@@ -136,6 +134,7 @@ const Home = () => {
                 .map((x, i) => `Jul ${15 + i}`)
                 .map((label) => (
                   <VerticalChartItem
+                    key={label}
                     value={'$21500'}
                     percentage={randomIntFromInterval(30, 100)}
                     label={label}

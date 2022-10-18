@@ -1,0 +1,19 @@
+.root{
+  padding: 4px 10px;
+  background: #E2E2FF;
+  border-radius: 6.92301px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  color: rgba(48, 62, 245, 0.5);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &_active{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background: linear-gradient(91.51deg, #9FA5FD 11.27%, #303EF5 100%);
+  }
+}

@@ -99,6 +99,7 @@
           background: #EAECFE;
           position: relative;
           &::before{
+            opacity: 1 !important;
             content: '';
             position: absolute;
             display: block;
@@ -107,7 +108,7 @@
             background: url('../../../public/icons/menu-connect-items.svg');
             width: 13px;
             height: 20px;
-        }
+          }
         }
         .text{
           background: #EAECFE;
@@ -116,6 +117,7 @@
         }
       }
       .icon {
+        transition: all 300ms ease-in;
         border-radius: 11px;
         width: 38px;
         height: 38px;
@@ -124,9 +126,23 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+        &::before{
+          content: '';
+          position: absolute;
+          display: block;
+          right: -8px;
+          top: 7.5px;
+          background: url('../../../public/icons/menu-connect-items.svg');
+          width: 13px;
+          height: 20px;
+          opacity: 0;
+          transition: opacity 300ms ease-in;
+        }
 
       }
       .text{
+        transition: all 300ms ease-in;
         padding: 7px 15px;
         font-weight: 600;
         font-size: 16px;
