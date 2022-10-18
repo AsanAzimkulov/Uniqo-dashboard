@@ -32,6 +32,12 @@
       color: #303EF5;
     }
   }
+  &_variant2{
+    .planc{
+      right: calc(50% - 3px) !important;
+      // top: -20.5px !important;
+    }
+  }
 }
 
 .label{

@@ -3,12 +3,13 @@ import React, { useState } from 'react';
 import ChartCustomTooltip from '../ChartCustomTooltip';
 import styles from './index.module.scss';
 
-const VerticalChartItem = ({ label, value, percentage }) => {
+const VerticalChartItem = ({ label, value, percentage, variant }) => {
   const [isActive, setIsActive] = useState(false);
   return (
     <div
       className={classNames(styles.root, {
         [styles.root_active]: isActive,
+        [styles.root_variant2]: variant === 2
       })}
       onMouseEnter={() => setIsActive(true)}
       onMouseLeave={() => setIsActive(false)}>

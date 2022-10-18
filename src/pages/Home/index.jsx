@@ -136,7 +136,7 @@ const Home = () => {
                     value={'$21500'}
                     percentage={randomIntFromInterval(30, 100)}
                     label={label}
-                    variant={3}
+                    variant={2}
                   />
                 ))}
             </div>
