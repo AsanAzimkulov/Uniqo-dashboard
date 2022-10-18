@@ -6,11 +6,12 @@
   justify-content: space-between;
   position: fixed;
   width: 225px;
+  transition: width 300ms ease-in;
   filter: drop-shadow(10px 0px 20px rgba(48, 62, 245, 0.15));
   &::before{
     // filter: drop-shadow(10px 0px 20px rgba(48, 62, 245, 0.15));
     content: "";
-    width: 100%;
+    width: 236px;
     height: 810px;
     /* background-position: -180px 0px; */
     left: 0;
@@ -19,11 +20,13 @@
     display: block;
     background: url('../../../public/images/sidebar-shape.png') center center no-repeat;
     background-size: 100% 100%;
+    transition: margin-left 300ms ease-in;
+
   }
   &::after{
     // filter: drop-shadow(10px 0px 20px rgba(48, 62, 245, 0.15));
     content: "";
-    width: 100%;
+    width: 236px;
     height: 810px;
     /* background-position: -180px 0px; */
     left: 0;
@@ -32,6 +35,8 @@
     display: block;
     background: white;
     z-index: 0;
+    transition: margin-left 300ms ease-in;
+
   }
   .open{
     cursor: pointer;
@@ -43,7 +48,8 @@
     border-radius: 50%;
     border: none;
     top: 128px;
-    right: -25px;
+    right: -35px;
+    transition: right 300ms ease-in;
     width: 48px;
     height: 48px;
     .icon{
@@ -53,6 +59,53 @@
 
   &_closed{
 
+    width: 123px;
+    .open{
+      right: -15px;
+      transform: rotateY(180deg);
+    }
+
+    &::before, &::after{
+      margin-left: -123px;
+    }
+
+    .logo{
+      &__text{
+        opacity: 0;
+        transition: opacity 100ms ease-in 100ms;
+      }
+    }
+    .menu{
+      .list{
+        .item{
+          .icon{
+            &::before{
+              filter: opacity(0);
+              transition: filter 100ms ease-in 100ms;
+            }
+          }
+          .text{
+            opacity: 0;
+            transition: opacity 100ms ease-in 100ms;
+          }
+        }
+      }
+    }
+
+    .socials{
+      .item{
+        justify-content: center;
+        .image{
+          margin: 0;
+        }
+      }
+      .text{
+        width: 0px !important;
+        opacity: 0 !important;
+        transition: opacity 100ms ease-in 100ms, width 200ms ease-in 100ms;
+
+      }
+    }
   }
 }
 
@@ -68,6 +121,9 @@
     font-size: 26px;
     line-height: 29px;
     color: #1A202C;
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+
   }
   &__image{
     margin-right: 30px;
@@ -114,6 +170,8 @@
           background: #EAECFE;
           color: #303EF5 !important;
           border-radius: 11px;
+          opacity: 1;
+          transition: opacity 300ms ease-in;
         }
       }
       .icon {
@@ -128,6 +186,9 @@
         align-items: center;
         position: relative;
         &::before{
+          filter: opacity(1);
+          transition: filter 300ms ease-in;
+
           content: '';
           position: absolute;
           display: block;
@@ -176,6 +237,10 @@
       font-size: 16px;
       line-height: 24px;
       color: #A09AA7;
+      opacity: 1;
+      transition: opacity 300ms ease-in,
+      width 200ms ease-in 100ms;
+      width: auto;
     }
   }
 }

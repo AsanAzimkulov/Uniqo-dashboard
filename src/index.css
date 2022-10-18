@@ -4,6 +4,8 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 code {
@@ -11,6 +13,6 @@ code {
     monospace;
 }
 
-*{
+* {
   box-sizing: border-box;
 }

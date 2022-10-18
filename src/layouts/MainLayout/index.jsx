@@ -9,7 +9,10 @@ import { Outlet } from 'react-router';
 const MainLayout = () => {
   const { isSidebarOpened, setIsSidebarOpened } = useContext(AppContext);
   return (
-    <div className={styles.layout}>
+    <div
+      className={classNames(styles.layout, {
+        [styles.layout_sidebarOpened]: !isSidebarOpened,
+      })}>
       <div className={styles.left}>
         <Sidebar isOpened={isSidebarOpened} onToggle={() => setIsSidebarOpened((prev) => !prev)} />
       </div>

@@ -7,7 +7,7 @@ import { MainLayout } from './layouts/MainLayout';
 
 
 function App() {
-  const [isSidebarOpened, setIsSidebarOpened] = useState(true);
+  const [isSidebarOpened, setIsSidebarOpened] = useState(false);
   const pageNames = {
     '/': 'Dashboard',
     '/account': 'Account'
