@@ -152,7 +152,7 @@ const Home = () => {
               <img src='./icons/filter.svg' alt='Filter icon' className={styles.icon} />
             </div>
           </div>
-          <div className={styles.checks}>
+          <div className={styles.checks} id='c-scrollbar-1'>
             <Check date={'25 min ago'} unqValue={'0.24 UNQ'} altValue={'$1440'} value={'$56,47'} />
             <Check
               date={'25 min ago'}

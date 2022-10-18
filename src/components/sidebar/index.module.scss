@@ -6,7 +6,7 @@
   justify-content: space-between;
   position: fixed;
   width: 225px;
-  transition: width 0ms ease-in;
+  transition: width 150ms ease-in;
   filter: drop-shadow(10px 0px 20px rgba(48, 62, 245, 0.15));
   &::before{
     // filter: drop-shadow(10px 0px 20px rgba(48, 62, 245, 0.15));
@@ -20,7 +20,7 @@
     display: block;
     background: url('../../../public/images/sidebar-shape.png') center center no-repeat;
     background-size: 100% 100%;
-    transition: margin-left 0ms ease-in;
+    transition: margin-left 150ms ease-in;
 
   }
   &::after{
@@ -35,7 +35,7 @@
     display: block;
     background: white;
     z-index: 0;
-    transition: margin-left 0ms ease-in;
+    transition: margin-left 150ms ease-in;
 
   }
   .open{
@@ -49,7 +49,7 @@
     border: none;
     top: 128px;
     right: -35px;
-    transition: right 0ms ease-in;
+    transition: right 150ms ease-in;
     width: 48px;
     height: 48px;
     .icon{
@@ -71,8 +71,8 @@
 
     .logo{
       &__text{
-        opacity: 0;
-        transition: opacity 100ms ease-in 0
+        visibility: hidden !important;
+        transition: visibility 0ms linear 0ms !important;
       }
     }
     .menu{
@@ -80,13 +80,13 @@
         .item{
           .icon{
             &::before{
-              filter: opacity(0);
-              transition: filter 100ms ease-in 0
+              visibility: hidden !important;
+              transition: visibility 0ms linear 0ms !important;
             }
           }
           .text{
-            opacity: 0;
-            transition: opacity 100ms ease-in 0
+            visibility: hidden !important;
+            transition: visibility 0ms linear 0ms !important;
           }
         }
       }
@@ -100,10 +100,9 @@
         }
       }
       .text{
-        width: 0px !important;
-        opacity: 0 !important;
-        transition: opacity 100ms ease-in 100ms, width 200ms ease-in 0
-
+        visibility: hidden !important;
+        transition: visibility 0ms linear 0ms !important;
+        width: 0;
       }
     }
   }
@@ -121,8 +120,8 @@
     font-size: 26px;
     line-height: 29px;
     color: #1A202C;
-    opacity: 1;
-    transition: opacity 0ms ease-in;
+    visibility: visible;
+    transition: visibility 0ms linear 200ms;
 
   }
   &__image{
@@ -171,7 +170,8 @@
           color: #303EF5 !important;
           border-radius: 11px;
           opacity: 1;
-          transition: opacity 0ms ease-in;
+          visibility: visible;
+          transition: visibility 0ms linear 200ms;
         }
       }
       .icon {
@@ -186,8 +186,8 @@
         align-items: center;
         position: relative;
         &::before{
-          filter: opacity(1);
-          transition: filter 0ms ease-in;
+          visibility: visible;
+          transition: visibility 0ms linear 200ms;
 
           content: '';
           position: absolute;
@@ -203,7 +203,8 @@
 
       }
       .text{
-        transition: all 0ms ease-in;
+        visibility: visible;
+        transition: visibility 0ms linear 200ms;
         padding: 7px 15px;
         font-weight: 600;
         font-size: 16px;
@@ -237,10 +238,8 @@
       font-size: 16px;
       line-height: 24px;
       color: #A09AA7;
-      opacity: 1;
-      transition: opacity 0ms ease-in,
-      width 200ms ease-in 0;
-      width: auto;
+      visibility: visible;
+      transition: visibility 0ms linear 200ms;
     }
   }
 }
