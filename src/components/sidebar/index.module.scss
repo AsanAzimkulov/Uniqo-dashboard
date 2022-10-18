@@ -6,7 +6,7 @@
   justify-content: space-between;
   position: fixed;
   width: 225px;
-  transition: width 150ms ease-in;
+  transition: width 500ms ease-in;
   filter: drop-shadow(10px 0px 20px rgba(48, 62, 245, 0.15));
   &::before{
     // filter: drop-shadow(10px 0px 20px rgba(48, 62, 245, 0.15));
@@ -20,7 +20,7 @@
     display: block;
     background: url('../../../public/images/sidebar-shape.png') center center no-repeat;
     background-size: 100% 100%;
-    transition: margin-left 150ms ease-in;
+    transition: margin-left 500ms ease-in;
 
   }
   &::after{
@@ -35,7 +35,7 @@
     display: block;
     background: white;
     z-index: 0;
-    transition: margin-left 150ms ease-in;
+    transition: margin-left 500ms ease-in;
 
   }
   .open{
@@ -49,7 +49,7 @@
     border: none;
     top: 128px;
     right: -35px;
-    transition: right 150ms ease-in;
+    transition: right 500ms ease-in;
     width: 48px;
     height: 48px;
     .icon{
@@ -121,7 +121,7 @@
     line-height: 29px;
     color: #1A202C;
     visibility: visible;
-    transition: visibility 0ms linear 200ms;
+    transition: visibility 0ms linear 350ms;
 
   }
   &__image{
@@ -171,7 +171,7 @@
           border-radius: 11px;
           opacity: 1;
           visibility: visible;
-          transition: visibility 0ms linear 200ms;
+          transition: visibility 0ms linear 350ms;
         }
       }
       .icon {
@@ -187,7 +187,7 @@
         position: relative;
         &::before{
           visibility: visible;
-          transition: visibility 0ms linear 200ms;
+          transition: visibility 0ms linear 350ms;
 
           content: '';
           position: absolute;
@@ -204,7 +204,7 @@
       }
       .text{
         visibility: visible;
-        transition: visibility 0ms linear 200ms;
+        transition: visibility 0ms linear 350ms;
         padding: 7px 15px;
         font-weight: 600;
         font-size: 16px;
@@ -239,7 +239,7 @@
       line-height: 24px;
       color: #A09AA7;
       visibility: visible;
-      transition: visibility 0ms linear 200ms;
+      transition: visibility 0ms linear 350ms;
     }
   }
 }
