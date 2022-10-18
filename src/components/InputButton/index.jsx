@@ -2,19 +2,15 @@ import classNames from 'classnames';
 import React, { useState } from 'react';
 import styles from './index.module.scss';
 
-const InputButton = ({option, onClick}) => {
-  const [isActive, setIsActive] = useState(false);
-  const onToggle = (e) => {
-    onClick();
-    setIsActive(prev => !prev)
-  }
+const InputButton = ({option, onClick, active}) => {
+
   return (
     <button
     type='button'
       className={classNames(styles.root, {
-        [styles.root_active]: isActive,
+        [styles.root_active]: active,
       })}
-      onClick={onToggle}>
+      onClick={onClick}>
       {option}
     </button>
   );

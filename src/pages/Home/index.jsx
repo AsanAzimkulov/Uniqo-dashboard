@@ -8,8 +8,6 @@ import ChartModesPanel from '../../components/ChartModesPanel';
 import { Check } from '../../components/Check';
 import { randomIntFromInterval } from '../../utils/random';
 
-
-
 const Home = () => {
   const labels = new Array(7).fill(null).map((a, index) => `Jul ${18 + index}`);
 
@@ -171,6 +169,7 @@ const Home = () => {
               value={'$56,47'}
               send
             />
+            <Check date={'25 min ago'} unqValue={'0.24 UNQ'} altValue={'$1440'} value={'$56,47'} />
           </div>
         </div>
         <div className={styles.right}>

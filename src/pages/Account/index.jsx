@@ -18,6 +18,8 @@ const Account = () => {
 
   const [isSelectExpanded, setIsSelectExpanded] = useState(false);
 
+  const [activeInputMode, setActiveInputMode] = useState(0);
+
   return (
     <div className={styles.page}>
       <div className={styles.left}>
@@ -189,9 +191,9 @@ const Account = () => {
             <div className={styles.quantityInput}>
               <input type='text' id='quantity' placeholder='Enter quantity' />
               <div className={styles.options}>
-                {['Day', 'Month'].map((option) => (
-                  <div className={styles.option} key={option}>
-                    <InputButton option={option} onClick={() => {}}/>
+                {['Day', 'Month'].map((option, i) => (
+                  <div className={styles.option} key={option} >
+                    <InputButton option={option} active={activeInputMode === i} onClick={() => setActiveInputMode(i)} />
                   </div>
                 ))}
               </div>
@@ -215,11 +217,15 @@ const Account = () => {
           <h2 className={styles.title}>APY</h2>
           <ul className={styles.list}>
             <li className={styles.item}>
-              <div className={styles.planc}><p className={styles.text}>5.6%</p></div>
+              <div className={styles.planc}>
+                <p className={styles.text}>5.6%</p>
+              </div>
               <p className={styles.desc}>on first 0.25 ETH</p>
             </li>
             <li className={styles.item}>
-              <div className={styles.planc}><p className={styles.text}>2.8%</p></div>
+              <div className={styles.planc}>
+                <p className={styles.text}>2.8%</p>
+              </div>
               <p className={styles.desc}>On all other 0.25 ETH</p>
             </li>
           </ul>

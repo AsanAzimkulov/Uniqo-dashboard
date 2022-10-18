@@ -6,7 +6,7 @@
   justify-content: space-between;
   position: fixed;
   width: 225px;
-  transition: width 300ms ease-in;
+  transition: width 0ms ease-in;
   filter: drop-shadow(10px 0px 20px rgba(48, 62, 245, 0.15));
   &::before{
     // filter: drop-shadow(10px 0px 20px rgba(48, 62, 245, 0.15));
@@ -20,7 +20,7 @@
     display: block;
     background: url('../../../public/images/sidebar-shape.png') center center no-repeat;
     background-size: 100% 100%;
-    transition: margin-left 300ms ease-in;
+    transition: margin-left 0ms ease-in;
 
   }
   &::after{
@@ -35,7 +35,7 @@
     display: block;
     background: white;
     z-index: 0;
-    transition: margin-left 300ms ease-in;
+    transition: margin-left 0ms ease-in;
 
   }
   .open{
@@ -49,7 +49,7 @@
     border: none;
     top: 128px;
     right: -35px;
-    transition: right 300ms ease-in;
+    transition: right 0ms ease-in;
     width: 48px;
     height: 48px;
     .icon{
@@ -72,7 +72,7 @@
     .logo{
       &__text{
         opacity: 0;
-        transition: opacity 100ms ease-in 100ms;
+        transition: opacity 100ms ease-in 0
       }
     }
     .menu{
@@ -81,12 +81,12 @@
           .icon{
             &::before{
               filter: opacity(0);
-              transition: filter 100ms ease-in 100ms;
+              transition: filter 100ms ease-in 0
             }
           }
           .text{
             opacity: 0;
-            transition: opacity 100ms ease-in 100ms;
+            transition: opacity 100ms ease-in 0
           }
         }
       }
@@ -102,7 +102,7 @@
       .text{
         width: 0px !important;
         opacity: 0 !important;
-        transition: opacity 100ms ease-in 100ms, width 200ms ease-in 100ms;
+        transition: opacity 100ms ease-in 100ms, width 200ms ease-in 0
 
       }
     }
@@ -122,7 +122,7 @@
     line-height: 29px;
     color: #1A202C;
     opacity: 1;
-    transition: opacity 300ms ease-in;
+    transition: opacity 0ms ease-in;
 
   }
   &__image{
@@ -171,11 +171,11 @@
           color: #303EF5 !important;
           border-radius: 11px;
           opacity: 1;
-          transition: opacity 300ms ease-in;
+          transition: opacity 0ms ease-in;
         }
       }
       .icon {
-        transition: all 300ms ease-in;
+        transition: all 0ms ease-in;
         border-radius: 11px;
         width: 38px;
         height: 38px;
@@ -187,7 +187,7 @@
         position: relative;
         &::before{
           filter: opacity(1);
-          transition: filter 300ms ease-in;
+          transition: filter 0ms ease-in;
 
           content: '';
           position: absolute;
@@ -198,12 +198,12 @@
           width: 13px;
           height: 20px;
           opacity: 0;
-          transition: opacity 300ms ease-in;
+          transition: opacity 0ms ease-in;
         }
 
       }
       .text{
-        transition: all 300ms ease-in;
+        transition: all 0ms ease-in;
         padding: 7px 15px;
         font-weight: 600;
         font-size: 16px;
@@ -238,8 +238,8 @@
       line-height: 24px;
       color: #A09AA7;
       opacity: 1;
-      transition: opacity 300ms ease-in,
-      width 200ms ease-in 100ms;
+      transition: opacity 0ms ease-in,
+      width 200ms ease-in 0;
       width: auto;
     }
   }
