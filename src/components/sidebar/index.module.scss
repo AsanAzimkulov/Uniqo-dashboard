@@ -71,8 +71,8 @@
 
     .logo{
       &__text{
-        visibility: hidden !important;
-        transition: visibility 0ms linear 0ms !important;
+        opacity: 0 !important;
+        transition: opacity 140ms linear 0ms !important;
       }
     }
     .menu{
@@ -80,13 +80,13 @@
         .item{
           .icon{
             &::before{
-              visibility: hidden !important;
-              transition: visibility 0ms linear 0ms !important;
+              opacity: 0 !important;
+              transition: opacity 140ms linear 0ms !important;
             }
           }
           .text{
-            visibility: hidden !important;
-            transition: visibility 0ms linear 0ms !important;
+            opacity: 0 !important;
+            transition: opacity 140ms linear 0ms !important;
           }
         }
       }
@@ -94,14 +94,14 @@
 
     .socials{
       .item{
-        justify-content: center;
+        justify-content: flex-start;
         .image{
           margin: 0;
         }
       }
       .text{
-        visibility: hidden !important;
-        transition: visibility 0ms linear 0ms !important;
+        opacity: 0 !important;
+        transition: opacity 140ms linear 0ms !important;
         width: 0;
       }
     }
@@ -120,8 +120,8 @@
     font-size: 26px;
     line-height: 29px;
     color: #1A202C;
-    visibility: visible;
-    transition: visibility 0ms linear 200ms;
+    opacity: 1;
+    transition: opacity 140ms linear 100ms;
 
   }
   &__image{
@@ -170,12 +170,11 @@
           color: #303EF5 !important;
           border-radius: 11px;
           opacity: 1;
-          visibility: visible;
-          transition: visibility 0ms linear 200ms;
+          transition: opacity 140ms linear 0ms;
         }
       }
       .icon {
-        transition: all 0ms ease-in;
+        transition: all 140ms ease-in;
         border-radius: 11px;
         width: 38px;
         height: 38px;
@@ -186,8 +185,8 @@
         align-items: center;
         position: relative;
         &::before{
-          visibility: visible;
-          transition: visibility 0ms linear 200ms;
+          opacity: 1;
+          transition: opacity 140ms linear 0ms;
 
           content: '';
           position: absolute;
@@ -198,13 +197,13 @@
           width: 13px;
           height: 20px;
           opacity: 0;
-          transition: opacity 0ms ease-in;
+          transition: opacity 140ms ease-in;
         }
 
       }
       .text{
-        visibility: visible;
-        transition: visibility 0ms linear 200ms;
+        opacity: 1;
+        transition: opacity 140ms linear 0ms;
         padding: 7px 15px;
         font-weight: 600;
         font-size: 16px;
@@ -238,8 +237,8 @@
       font-size: 16px;
       line-height: 24px;
       color: #A09AA7;
-      visibility: visible;
-      transition: visibility 0ms linear 200ms;
+      opacity: 1;
+      transition: opacity 140ms linear 0ms;
     }
   }
 }
