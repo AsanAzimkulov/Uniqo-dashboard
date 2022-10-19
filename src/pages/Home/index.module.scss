@@ -26,6 +26,7 @@
 
 @media(max-width: 767.5px){
   .page{
+
     &>*{
       display: block !important;
       z-index: 4 !important;
@@ -571,20 +572,7 @@
     .right{
       margin-bottom: 40px;
       position: relative;
-      &::before{
-        content: '';
-        display: block;
-        position: absolute;
-        width: 155.06px;
-        height: 187.89px;
-        right: 45px;
-        top: -105px;
-        
-        background: linear-gradient(260.93deg, rgba(48, 62, 245, 0.35) 0%, rgba(255, 255, 255, 0.35) 100%);
 
-        filter: blur(101px);
-        border-radius: 20px;
-      }
       h2{
         margin-bottom: 15px;
       }

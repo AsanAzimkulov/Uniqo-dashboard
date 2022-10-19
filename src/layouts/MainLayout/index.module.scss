@@ -103,10 +103,10 @@
   }
 
   
-    background-image: url(../../../public/icons/bg.svg);
-    background-repeat: no-repeat;
-    background-position: 0 0px;
-    background-size: auto auto;
+    background-image: url(../../../public/icons/spheres.svg), url(../../../public/icons/spheres.svg);
+    background-repeat: no-repeat, repeat;
+    background-position: 0 0px, 0 calc(100% + 548px);
+    background-size: auto auto, 100% 1003px;
 
   
     
