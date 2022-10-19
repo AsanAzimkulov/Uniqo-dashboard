@@ -230,6 +230,12 @@
           }
         }
       }
+      &_withoutCrypto{
+        .value{
+          display: block;
+          margin-bottom: 9px;
+        }
+      }
       &_chart{
         padding: 15px 20px;
         .title{
@@ -267,10 +273,6 @@
       .value{
         font-size: 15px;
         line-height: 19px;
-        &:not(.crypto .value){
-          display: block;
-          margin-bottom: 6px;
-        }
       }
       .crypto{
         &__value{
