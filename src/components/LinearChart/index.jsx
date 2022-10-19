@@ -245,6 +245,7 @@ const LinearChart = ({ labels, data, width, height, fullWidth = false }) => {
                   return (Math.floor(value / 1000) * 1000).toLocaleString('en-US', {
                     style: 'currency',
                     maximumFractionDigits: 0,
+                    minimumFractionDigits: 0,
                     currency: 'USD',
                   });
                 },
