@@ -97,6 +97,7 @@
     display: block;
     width: 100vw;
     overflow-x: hidden;
+    position: relative;
     &::before{
       content: '';
       display: block;
