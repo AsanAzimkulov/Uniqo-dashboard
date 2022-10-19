@@ -619,4 +619,19 @@
 }
 
 
+@media(max-width: 388px){
+  .first{
+    .left{
+      .double{
+        .item{
+          margin-bottom: 10px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
 
