@@ -59,4 +59,16 @@ code {
   #c-scrollbar-down-m::-webkit-scrollbar {
     bottom: 0;
   }
+
+  #c-scrollbar-1::-webkit-scrollbar-track {
+    display: none;
+  }
+
+  #c-scrollbar-1::-webkit-scrollbar {
+    display: none;
+  }
+
+  #c-scrollbar-1::-webkit-scrollbar-thumb {
+    display: none;
+  }
 }
