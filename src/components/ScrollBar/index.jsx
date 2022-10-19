@@ -3,8 +3,6 @@ import { Scrollbars } from 'react-custom-scrollbars-2';
 import styles from './index.module.scss';
 
 export class CustomScrollbar extends Component {
-
-
   constructor(props, context) {
     super(props, context);
     this.props = props;
@@ -40,7 +38,7 @@ export class CustomScrollbar extends Component {
 
     const { maxHeight, thumbHeight, ...props } = this.props;
 
-    const top = (maxHeight - thumbHeight) * this.state.top;
+    const top = (maxHeight - thumbHeight) * (this.state.top || 0);
     if (isMobile) {
       return (
         <Scrollbars
@@ -67,7 +65,7 @@ export class CustomScrollbar extends Component {
         </Scrollbars>
       );
     } else {
-      if(!this.mounted.current){
+      if (!this.mounted.current) {
         setTimeout(() => this.setState({ activateBar: true }), 1000);
         this.mounted.current = true;
       }
