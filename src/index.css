@@ -90,9 +90,11 @@ code {
     background: linear-gradient(260.93deg, rgba(48, 62, 245, 0.35) 0%, rgba(255, 255, 255, 0.35) 100%);
     filter: blur(131px);
     border-radius: 32px;
+    z-index: 3;
   }
 
   #root::after {
+    z-index: 3;
     content: '';
     display: block;
     position: absolute;
