@@ -71,4 +71,37 @@ code {
   #c-scrollbar-1::-webkit-scrollbar-thumb {
     display: none;
   }
+
+  #root {
+    position: relative;
+    height: fit-content;
+    overflow: hidden;
+    width: 100vw;
+  }
+
+  #root::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 247.5px;
+    height: 299.89px;
+    left: -24px;
+    top: 46.06px;
+    background: linear-gradient(260.93deg, rgba(48, 62, 245, 0.35) 0%, rgba(255, 255, 255, 0.35) 100%);
+    filter: blur(131px);
+    border-radius: 32px;
+  }
+
+  #root::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 252.67px;
+    height: 312.42px;
+    left: -3.32px;
+    top: 291.92px;
+    background: linear-gradient(260.93deg, rgba(135, 48, 245, 0.25) 0%, rgba(255, 255, 255, 0.25) 100%);
+    filter: blur(131px);
+    border-radius: 32px;
+  }
 }

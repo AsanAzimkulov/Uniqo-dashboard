@@ -2,7 +2,7 @@
 
   display: flex;
   justify-content: space-between;
-  position: relative;
+
   &_sidebarOpened{
     .right{
       width: 82.15%
@@ -96,32 +96,9 @@
     display: block;
     width: 100vw;
     overflow-x: hidden;
-    position: relative;
+
     
-    &::before{
-      content: '';
-      display: block;
-      position: absolute;
-      width: 247.5px;
-      height: 299.89px;
-      left: -24px;
-      top: 46.06px;
-      background: linear-gradient(260.93deg, rgba(48, 62, 245, 0.35) 0%, rgba(255, 255, 255, 0.35) 100%);
-      filter: blur(131px);
-      border-radius: 32px;
-    }
-    &::after{
-      content: '';
-      display: block;
-      position: absolute;
-      width: 252.67px;
-      height: 312.42px;
-      left: -3.32px;
-      top: 291.92px;
-      background: linear-gradient(260.93deg, rgba(135, 48, 245, 0.25) 0%, rgba(255, 255, 255, 0.25) 100%);
-      filter: blur(131px);
-      border-radius: 32px;
-    }
+
     
     &_sidebarOpened{
       height: 100vh;
