@@ -10,7 +10,7 @@ const Sidebar = ({ isOpened, onToggle }) => {
       className={classNames(styles.root, {
         [styles.root_closed]: !isOpened,
       })}>
-      <button className={styles.open}>
+      <button className={styles.open} onClick={onToggle}>
         <img src='./icons/menu-open-icon.svg' alt='Open icon' className={styles.icon} />
       </button>
       <div>
