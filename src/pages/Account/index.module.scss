@@ -267,7 +267,10 @@
       .value{
         font-size: 15px;
         line-height: 19px;
-        margin-bottom: 6px;
+        &:not(.crypto .value){
+          display: block;
+          margin-bottom: 6px;
+        }
       }
       .crypto{
         &__value{
