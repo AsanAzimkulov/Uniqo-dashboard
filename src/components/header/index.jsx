@@ -23,6 +23,7 @@ const Header = ({ onToggleMenu }) => {
         </Link>
         {title}
       </h1>
+
       <div className={styles.middle} id='c-scrollbar-down-m'>
         <div className={styles.middle__block}>
           <img
@@ -50,6 +51,7 @@ const Header = ({ onToggleMenu }) => {
           <p className={styles.middle__block__title}>min</p>
         </div>
       </div>
+
       <button className={styles.button}>
         <img
           src='./icons/connect-wallet.svg'
