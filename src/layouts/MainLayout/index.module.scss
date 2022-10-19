@@ -2,7 +2,6 @@
 
   display: flex;
   justify-content: space-between;
-  position: relative;
 
   &_sidebarOpened{
     .right{
@@ -97,9 +96,19 @@
     display: block;
     width: 100vw;
     overflow-x: hidden;
-
+    position: relative;
     
+  &::after, &::before{
+    content: normal;
+  }
 
+  
+    background-image: url(../../../public/icons/bg.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0px;
+    background-size: auto auto;
+
+  
     
     &_sidebarOpened{
       height: 100vh;
