@@ -1,0 +1,63 @@
+.track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+  height: 100%;
+  width: 8px !important;
+  top: 0;
+  right: 0;
+  display: block !important;
+}
+
+.thumb {
+  position: relative;
+  border-radius: 4px;
+  width: 8px;
+  background-color: #303EF5;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+
+
+.container{
+  overflow: auto !important;
+}
+
+  #c-scrollbar-2{
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+
+  .container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.0);
+    border-radius: 10px;
+    background-color: transparent;
+  }
+  
+  .container::-webkit-scrollbar {
+    width: 12px;
+    background-color: transparent;
+  }
+  
+  .container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .0);
+    background-color: transparent;
+  }
+
+
+  @media(max-width: 767.5px){
+    .thumb{
+      display: none;
+    }
+    .track{
+      display: none !important;
+    }
+  }
+
+  
+  
+
+
+ 
