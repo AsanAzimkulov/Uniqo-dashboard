@@ -2,7 +2,6 @@
 
   display: flex;
   justify-content: space-between;
-  background: #FFFFFF;
   position: relative;
   &_sidebarOpened{
     .right{
@@ -91,19 +90,15 @@
   }
 }
 
-.before, .after{
-  display: none;
-}
+
 @media(max-width: 767.5px){
   .layout{
     display: block;
     width: 100vw;
     overflow-x: hidden;
     position: relative;
-    &::before, &::after{
-      content: normal
-    }
-    .before{
+    
+    &::before{
       content: '';
       display: block;
       position: absolute;
@@ -115,7 +110,7 @@
       filter: blur(131px);
       border-radius: 32px;
     }
-    .after{
+    &::after{
       content: '';
       display: block;
       position: absolute;
