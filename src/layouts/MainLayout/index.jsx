@@ -13,6 +13,8 @@ const MainLayout = () => {
       className={classNames(styles.layout, {
         [styles.layout_sidebarOpened]: isSidebarOpened,
       })}>
+        <div className={styles.before}></div>
+        <div className={styles.after}></div>
       <div className={styles.left} id='c-scrollbar-1'>
         <div className={styles.forceScroll}></div>
         <Sidebar isOpened={isSidebarOpened} onToggle={() => setIsSidebarOpened((prev) => !prev)} />
