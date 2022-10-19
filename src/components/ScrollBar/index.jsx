@@ -8,7 +8,7 @@ export function CustomScrollbar({ maxHeight, ...props }) {
   // Activate scroll
   const [, setState] = useState(4);
 
-  setTimeout(() => setState(7), 500);
+  setTimeout(() => setState(7), 2000);
 
   return (
     <Scrollbars
