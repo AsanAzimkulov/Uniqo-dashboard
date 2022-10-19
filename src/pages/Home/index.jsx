@@ -161,7 +161,7 @@ const Home = () => {
           </div>
 
           <div className={styles.checks}>
-            <CustomScrollbar maxHeight={isMobile ? 139 : 180}>
+            <CustomScrollbar maxHeight={isMobile ? 139 : 180} thumbHeight = {80}>
               <Check
                 date={'25 min ago'}
                 unqValue={'0.24 UNQ'}
