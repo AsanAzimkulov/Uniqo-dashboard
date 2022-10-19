@@ -102,8 +102,7 @@ const LinearChart = ({ labels, data, width, height, fullWidth = false }) => {
       gradientBG.addColorStop(0.726, 'rgba(198, 201, 250, 0)');
 
       setGradientBG(gradientBG);
-      // console.log(chart._config.data.datasets[activeElement[0]._datasetIndex].data[activeElement[0]._index]);
-      console.log(chart);
+
     }
   }, []);
 
@@ -154,7 +153,7 @@ const LinearChart = ({ labels, data, width, height, fullWidth = false }) => {
 
               const defaultColor = '#A09AA7';
               const activeColor = '#303EF5';
-              console.log(chartRef.current.config._config.options.scales.x.ticks.color);
+
 
               if (chartRef.current.config._config.options.scales.x.ticks.color instanceof Array) {
                 chartRef.current.config._config.options.scales.x.ticks.color =

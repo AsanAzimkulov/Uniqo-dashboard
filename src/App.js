@@ -6,6 +6,12 @@ import { AccountPage as Account } from './pages/Account';
 import { MainLayout } from './layouts/MainLayout';
 
 
+import { install } from "resize-observer";
+
+install();
+
+
+
 function App() {
   const [isSidebarOpened, setIsSidebarOpened] = useState(false);
   const pageNames = {

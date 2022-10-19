@@ -7,6 +7,7 @@ import styles from './index.module.scss';
 import ChartModesPanel from '../../components/ChartModesPanel';
 import { Check } from '../../components/Check';
 import { randomIntFromInterval } from '../../utils/random';
+import { CustomScrollbar } from '../../components/ScrollBar';
 
 const Home = () => {
   const isMobile = window.innerWidth <= 767.5;
@@ -158,7 +159,9 @@ const Home = () => {
               <img src='./icons/filter.svg' alt='Filter icon' className={styles.icon} />
             </div>
           </div>
-          <div className={styles.checks} id='c-scrollbar-1'>
+
+          <div className={styles.checks}>
+          <CustomScrollbar maxHeight = {isMobile ? 139 : 180} >
             <Check date={'25 min ago'} unqValue={'0.24 UNQ'} altValue={'$1440'} value={'$56,47'} />
             <Check
               date={'25 min ago'}
@@ -176,7 +179,8 @@ const Home = () => {
               send
             />
             <Check date={'25 min ago'} unqValue={'0.24 UNQ'} altValue={'$1440'} value={'$56,47'} />
-          </div>
+          </CustomScrollbar>
+            </div>
         </div>
         <div className={styles.right}>
           <div className={styles.top}>
