@@ -109,9 +109,9 @@
       height: 299.89px;
       left: -24px;
       top: 46.06px;
-      background: rgba(48, 62, 245, 0.35);
-      filter: blur(161.554px);
-      border-radius: 32.3134px;
+      background: linear-gradient(260.93deg, rgba(48, 62, 245, 0.35) 0%, rgba(255, 255, 255, 0.35) 100%);
+      filter: blur(131px);
+      border-radius: 32px;
     }
     &::after{
       content: '';
@@ -121,9 +121,9 @@
       height: 312.42px;
       left: -3.32px;
       top: 291.92px;
-      background: rgba(135, 48, 245, 0.25) ;
-      filter: blur(161.554px);
-      border-radius: 32.3134px;
+      background: linear-gradient(260.93deg, rgba(135, 48, 245, 0.25) 0%, rgba(255, 255, 255, 0.25) 100%);
+      filter: blur(131px);
+      border-radius: 32px;
     }
     
     &_sidebarOpened{
