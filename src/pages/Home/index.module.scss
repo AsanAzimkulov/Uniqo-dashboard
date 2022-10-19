@@ -570,10 +570,6 @@
     .right{
       margin-bottom: 40px;
       position: relative;
-      -webkit-backface-visibility: hidden;
-      -moz-backface-visibility: hidden;
-      -webkit-transform: translate3d(0, 0, 0);
-      -moz-transform: translate3d(0, 0, 0);
       &::before{
         content: '';
         display: block;
@@ -585,7 +581,7 @@
         
         background: linear-gradient(260.93deg, rgba(48, 62, 245, 0.35) 0%, rgba(255, 255, 255, 0.35) 100%);
 
-        filter: blur(101px);
+        backdrop-filter: blur(101px);
         border-radius: 20px;
       }
       h2{
