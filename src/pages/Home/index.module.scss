@@ -28,6 +28,7 @@
   .page{
     &>*{
       display: block !important;
+      z-index: 4 !important;
     }
     .left{
       width: 100%;
@@ -49,9 +50,6 @@
   .left{
     display: flex;
     justify-content: space-between;
-    &>*{
-      z-index: 4;
-    }
     .blue{
       overflow: hidden;
       width: 30.40%;
@@ -156,9 +154,6 @@
     }
   }
   .right{
-    &>*{
-      z-index: 4;
-    }
     padding: 31px;
     display: flex;
     justify-content: space-between;
