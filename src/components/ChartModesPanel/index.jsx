@@ -21,6 +21,7 @@ const ChartModesPanel = ({ modes, onClick, activeIndex }) => {
           {mode}
         </button>
       ))}
+      <div className={styles.item}></div>
     </ul>
   );
 };

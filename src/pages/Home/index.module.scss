@@ -384,6 +384,7 @@
           width: 63.63%;
           overflow-x: scroll;
           &::after{
+            pointer-events: none;
             margin-right: -3px;
             position: absolute;
             width: 46px;
@@ -413,6 +414,7 @@
           max-width: 47.79%;
           overflow-x: scroll;
           &::after{
+            pointer-events: none;
             position: absolute;
             width: 43px;
             height: 33px;

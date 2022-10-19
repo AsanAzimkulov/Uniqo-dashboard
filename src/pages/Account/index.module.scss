@@ -326,6 +326,7 @@
         width: 63.23%;
         overflow-x: scroll;
         &::after{
+          pointer-events: none;
           position: absolute;
           width: 46px;
           height: 33px;
