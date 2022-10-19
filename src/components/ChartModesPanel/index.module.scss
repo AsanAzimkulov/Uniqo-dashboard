@@ -22,7 +22,6 @@
     cursor: pointer;
     &:last-child{
       margin-right: 0;
-      width: 45px;
     }
     &_active{
       color: #FFFFFF;
@@ -38,6 +37,9 @@
       border-radius: 5.44px;
       margin-right: 9px;
       height: 23.77px;
+      &:last-child{
+        width: 45px;
+      }
     }
   }
 }
