@@ -384,6 +384,7 @@
           width: 63.63%;
           overflow-x: scroll;
           &::after{
+            margin-right: -3px;
             position: absolute;
             width: 46px;
             height: 33px;
@@ -392,7 +393,7 @@
             content: '';
             display: block;
             top: -4px;
-            right: -8.5px;
+            right: 1.5px;
           }
         }
       }
