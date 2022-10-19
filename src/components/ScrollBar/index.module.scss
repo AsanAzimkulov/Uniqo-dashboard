@@ -45,6 +45,15 @@
     background-color: transparent;
   }
 
+  @media(max-width: 767.5px){
+    .thumb{
+      display: none;
+    }
+    .track{
+      display: none !important;
+    }
+  }
+
   
   
 
