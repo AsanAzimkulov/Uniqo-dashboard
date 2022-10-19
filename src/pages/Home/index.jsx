@@ -161,26 +161,41 @@ const Home = () => {
           </div>
 
           <div className={styles.checks}>
-          <CustomScrollbar maxHeight = {isMobile ? 139 : 180} >
-            <Check date={'25 min ago'} unqValue={'0.24 UNQ'} altValue={'$1440'} value={'$56,47'} />
-            <Check
-              date={'25 min ago'}
-              unqValue={'0.24 UNQ'}
-              altValue={'$1440'}
-              value={'$56,47'}
-              send
-            />
-            <Check date={'25 min ago'} unqValue={'0.24 UNQ'} altValue={'$1440'} value={'$56,47'} />
-            <Check
-              date={'25 min ago'}
-              unqValue={'0.24 UNQ'}
-              altValue={'$1440'}
-              value={'$56,47'}
-              send
-            />
-            <Check date={'25 min ago'} unqValue={'0.24 UNQ'} altValue={'$1440'} value={'$56,47'} />
-          </CustomScrollbar>
-            </div>
+            <CustomScrollbar maxHeight={isMobile ? 139 : 180}>
+              <Check
+                date={'25 min ago'}
+                unqValue={'0.24 UNQ'}
+                altValue={'$1440'}
+                value={'$56,47'}
+              />
+              <Check
+                date={'25 min ago'}
+                unqValue={'0.24 UNQ'}
+                altValue={'$1440'}
+                value={'$56,47'}
+                send
+              />
+              <Check
+                date={'25 min ago'}
+                unqValue={'0.24 UNQ'}
+                altValue={'$1440'}
+                value={'$56,47'}
+              />
+              <Check
+                date={'25 min ago'}
+                unqValue={'0.24 UNQ'}
+                altValue={'$1440'}
+                value={'$56,47'}
+                send
+              />
+              <Check
+                date={'25 min ago'}
+                unqValue={'0.24 UNQ'}
+                altValue={'$1440'}
+                value={'$56,47'}
+              />
+            </CustomScrollbar>
+          </div>
         </div>
         <div className={styles.right}>
           <div className={styles.top}>
