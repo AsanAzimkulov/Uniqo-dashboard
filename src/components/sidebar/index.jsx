@@ -4,19 +4,21 @@ import { Link, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 
 const Sidebar = ({ isOpened, onToggle }) => {
+  const isMobile = window.innerWidth <= 767.5;
+
   const { pathname: location } = useLocation();
   return (
     <aside
       className={classNames(styles.root, {
-        [styles.root_closed]: !isOpened,
+        [styles.root_closed]: isMobile ? !isOpened : isOpened,
       })}>
       <button className={styles.open} onClick={onToggle}>
         <img src='./icons/menu-open-icon.svg' alt='Open icon' className={styles.icon} />
       </button>
       <div>
         <Link to={'/'} className={styles.logo} onClick={onToggle}>
-            <img src='./images/logo.png' alt='Logotype image' className={styles.logo__image} />
-            <p className={styles.logo__text}>Uniqo</p>
+          <img src='./images/logo.png' alt='Logotype image' className={styles.logo__image} />
+          <p className={styles.logo__text}>Uniqo</p>
         </Link>
         <nav className={styles.menu}>
           <ul className={styles.list}>
