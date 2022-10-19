@@ -1,11 +1,14 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars-2';
 import styles from './index.module.scss';
 
 export function CustomScrollbar({ maxHeight, ...props }) {
   const target = useRef(null);
 
-  setTimeout(() => {target.current.dispatchEvent(new Event('click', {bubbles: true}))}, 1000)
+  // Activate scroll
+  const [, setState] = useState(4);
+
+  setTimeout(() => setState(7), 500);
 
   return (
     <Scrollbars
