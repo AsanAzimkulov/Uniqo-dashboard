@@ -52,6 +52,8 @@ ChartJS.register(
 );
 
 const LinearChart = ({ labels, data, width, height, fullWidth = false }) => {
+  const isMobile = window.innerWidth <= 767.5;
+
   const toolTipIdRef = useRef('id' + Math.random().toString(16).slice(2));
 
   const [gradientBG, setGradientBG] = useState(null);
@@ -94,7 +96,7 @@ const LinearChart = ({ labels, data, width, height, fullWidth = false }) => {
 
     if (chart) {
       const ctx = chart.ctx;
-      const gradientBG = ctx.createLinearGradient(0, 0, 0, 278);
+      const gradientBG = ctx.createLinearGradient(0, 0, 0, height);
 
       gradientBG.addColorStop(0.186, 'rgba(48, 62, 245, 0.5)');
       gradientBG.addColorStop(0.726, 'rgba(198, 201, 250, 0)');
@@ -113,7 +115,7 @@ const LinearChart = ({ labels, data, width, height, fullWidth = false }) => {
   }, [toolTipIdRef.current]);
 
   return (
-    <>
+    <div style={{ maxHeight: height }}>
       <Line
         onMouseLeave={onHoverOutside}
         ref={chartRef}
@@ -298,10 +300,17 @@ const LinearChart = ({ labels, data, width, height, fullWidth = false }) => {
                 // Display, position, and set styles for font
                 tooltipEl.style.opacity = 1;
                 tooltipEl.style.position = 'absolute';
-                tooltipEl.style.left =
-                  position.left + window.pageXOffset + tooltipModel.caretX - 96 + 'px'; // 88 - tooltip's width + 8
-                tooltipEl.style.top =
-                  position.top + window.pageYOffset + tooltipModel.caretY - 44 + 'px'; // 37 - tooltip's height + 7
+                if (isMobile) {
+                  tooltipEl.style.left =
+                    position.left + window.pageXOffset + tooltipModel.caretX - 64 + 'px'; // 68 - tooltip's width - 8
+                  tooltipEl.style.top =
+                    position.top + window.pageYOffset + tooltipModel.caretY - 29.4 + 'px'; // 25.4 - tooltip's height + 4
+                } else {
+                  tooltipEl.style.left =
+                    position.left + window.pageXOffset + tooltipModel.caretX - 96 + 'px'; // 88 - tooltip's width + 8
+                  tooltipEl.style.top =
+                    position.top + window.pageYOffset + tooltipModel.caretY - 44 + 'px'; // 37 - tooltip's height + 7
+                }
                 tooltipEl.style.font = bodyFont.string;
                 tooltipEl.style.padding =
                   tooltipModel.padding + 'px ' + tooltipModel.padding + 'px';
@@ -322,7 +331,7 @@ const LinearChart = ({ labels, data, width, height, fullWidth = false }) => {
         variant={2}
         absolute
       />
-    </>
+    </div>
   );
 };
 

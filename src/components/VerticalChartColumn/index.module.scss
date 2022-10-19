@@ -60,3 +60,34 @@ display: none;
   flex-grow: 1;
   width: 100%;
 }
+
+@media(max-width: 767.5px){
+  .root{
+    width: 21.75px;
+    .scale{
+      border-radius: 6.39843px;
+    }
+    &_active{
+      .scale{
+
+        .planc{
+          display: block;
+          position: absolute;
+          right: calc(50% - 0.5px);
+          top: -13.5px;
+        }
+        &::after{
+          width: 8.96px;
+          height: 8.96px;
+          right: 6.48px;
+          top: 6.14px;
+        }
+      }
+    }
+    &_variant2{
+      .planc{
+        right: calc(50% - 2px) !important;
+      }
+      }
+    }
+  }

@@ -31,4 +31,22 @@
     color: #303EF5;
   }
 
+
+  @media(max-width: 767.5px){
+    padding: 5.7px 11px;
+    &_variant2{
+      padding-left: 4.32px;
+    }
+    &__value{
+      font-size: 7.67811px;
+      line-height: 120%;
+    }
+    .icon{
+      margin-right: 1.28px;
+      width: 14px;
+      height: 14px;
+    }
+  }
+
 }
+

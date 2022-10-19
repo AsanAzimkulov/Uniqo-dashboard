@@ -82,3 +82,39 @@
   margin-top: 40.5px;
 
 }
+
+
+@media(min-width: 768px) and (max-width: 1229.5px) {
+  .layout{
+    width: 1240px;
+    overflow: hidden;
+  }
+}
+
+
+@media(max-width: 767.5px){
+  .layout{
+    display: block;
+    width: 100vw;
+    overflow-x: hidden;
+    &_sidebarOpened{
+      height: 100vh;
+      overflow-y: hidden;
+    }
+  }
+  .right{
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+    padding: 0 18px;;
+  }
+  .left{
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .pageContent{
+    margin-top: 10px;
+  }
+}

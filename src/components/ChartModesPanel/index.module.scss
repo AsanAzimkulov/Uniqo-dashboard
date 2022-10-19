@@ -27,4 +27,15 @@
       background: linear-gradient(91.51deg, #9FA5FD 11.27%, #303EF5 100%);
     }
   }
+
+  @media(max-width: 767.5px){
+    .item{
+      padding: 3.89px 8.55px;
+      font-size: 12px;
+      line-height: 16px;
+      border-radius: 5.44px;
+      margin-right: 9px;
+      height: 23.77px;
+    }
+  }
 }

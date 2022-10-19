@@ -22,11 +22,23 @@
     line-height: 120%;
     color: #A09AA7;
   }
-  meter{
-    font-weight: 600;
-    font-size: 11px;
-    line-height: 120%;
-    color: #A09AA7;
+}
+
+@media(max-width: 767.5px){
+  .page{
+    &>*{
+      display: block !important;
+    }
+    .left{
+      width: 100%;
+    }
+    .right{
+      width: 100%;
+    }
+    h2{
+      font-size: 15px;
+      line-height: 15px;
+    }
   }
 }
 
@@ -191,8 +203,106 @@
       justify-content: space-between;
     }
   }
-} 
+}
 
+@media(max-width: 767.5px){
+  .first{
+    .left{
+      margin-bottom: 20px;
+      .blue{
+        border-radius: 10px;
+        width: 31.42%;
+        padding: 21px;
+        &::before {
+          height: 142px;
+          background-size: calc(100% + 10px) 142px;
+          background-position-x: 15px;
+      }
+        .title{
+          font-size: 11px;
+          line-height: 120%;
+          margin-bottom: 3.34px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+        .value{
+          font-size: 18.7002px;
+          line-height: 19px;
+          margin-bottom: 12px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+      .double{
+        width: 31.14%;
+        .item{
+          border-radius: 10px;
+          padding: 12px 4px 12px 12px;
+          min-height: 58px;
+          .title{
+            font-size: 11px;
+            line-height: 129%;
+            margin-bottom: 2.67px;
+          }
+          .value{
+            font-size: 15px;
+            line-height: 19px;
+          }
+        }
+      }
+
+      .doubleMono{
+        width: 30%;
+        border-radius: 10px;
+        padding: 20px 27px;
+        min-height: 132px;
+        .title{
+          font-size: 11px;
+          line-height: 120%;
+          margin-bottom: 3.34px;
+        }
+        .value{
+          font-size: 15px;
+          line-height: 19px;
+        }
+      }
+    }
+    .right{
+      padding: 20px;
+      border-radius: 13.4px;
+      min-height: 126px;
+      margin-bottom: 20px;
+      .top{
+        align-items: center;
+        &__icon{
+          width: 20px;
+          height: 24.5px;
+          margin-right: 10.88px;
+        }
+        &__title{
+          font-size: 12px;
+          line-height: 129%;
+        }
+      }
+      .down{
+        &__title{
+          font-size: 12px;
+          line-height: 120%;
+          margin-bottom: 5.76px;
+        }
+        &__value{
+          font-size: 17.9156px;
+          line-height: 18px;
+        }
+      }
+      &__right{
+        width: 60.64%;
+      }
+    }
+  }
+}
 
 .second{
   margin-top: 35px;
@@ -249,6 +359,88 @@
   }
 }
 
+@media(max-width: 767.5px){
+  .second{
+    margin-top: 0;
+    .left{
+      padding: 19.86px 26px 11px 11px;
+      margin-bottom: 20px;
+      padding-bottom: 40px;
+
+      canvas{
+        margin-left: -27px;
+        margin-top: -40px;
+      }
+      .top{
+        position: relative;
+        align-items: flex-start;
+        margin-bottom: 6px;
+        h2{
+          margin-top: 3.89px;
+        }
+        .modesWrapper{
+          width: 63.63%;
+          overflow-x: scroll;
+          &::after{
+            position: absolute;
+            width: 46px;
+            height: 33px;
+            background: linear-gradient(93.35deg, #FFFFFF 26.3%, rgba(255, 255, 255, 0) 132.58%);
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+            content: '';
+            display: block;
+            top: -4px;
+            right: -8.5px;
+          }
+        }
+      }
+    }
+    .right{
+      padding: 15px;
+      padding-right: 0;
+      border-radius: 12.2881px;
+      margin-bottom: 20px;
+      .top{
+        position: relative;
+        margin-bottom: 5px;
+        h2{
+          margin-top: 3.89px;
+        }
+        .modesWrapperSecond{
+          max-width: 47.79%;
+          overflow-x: scroll;
+          &::after{
+            position: absolute;
+            width: 46px;
+            height: 33px;
+            background: linear-gradient(93.35deg, #FFFFFF 26.3%, rgba(255, 255, 255, 0) 132.58%);
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+            content: '';
+            display: block;
+            top: -4px;
+            right: -8.5px;
+          }
+        }
+      }
+      .bottom{
+        padding-right: 15px;
+        justify-content: space-between;
+        min-height: 121px;
+        .hor{
+          max-width: 75.18%;
+          h4{
+            white-space: nowrap;
+          }
+        }
+        .ver{
+          width: 47px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
 .third{
   margin-top: 35px;
   display: flex;
@@ -275,7 +467,7 @@
       }
     }
     .checks{
-      max-height: 151px;
+      max-height: 180px;
       overflow: auto;
       padding-right: 10px;    
     }
@@ -351,4 +543,74 @@
     }
   }
 }
+
+@media(max-width: 767.5px){
+  .third{
+    .left{
+      margin-bottom: 20px;
+      .top{
+        margin-bottom: 15px;
+        .filter{
+          .text{
+            font-size: 12px;
+            line-height: 18px;
+            margin-right: 7.62px;
+          }
+          .icon{
+            width: 8.82px;
+            height: 8.82px;
+          }
+        }
+      }
+      .checks{
+        max-height: 139px;
+      }
+    }
+    .right{
+      margin-bottom: 40px;
+      h2{
+        margin-bottom: 15px;
+      }
+      .list{
+        .item{
+          width: 31.63%;
+          border-radius: 12.8856px;
+          padding: 26px 10px;
+          &_withButton{
+            padding: 15px 2px;
+            .button{
+              font-size: 12.272px;
+              line-height: 17px;
+              padding: 5.83px 13.81px 5.83px 12.58px;
+              border-radius: 6.74959px;
+              width: fit-content;
+              margin: 0 auto;
+              .icon{
+                width: 19.64px;
+                height: 19.64px;
+              }
+            }
+          }
+          .top{
+            .icon{
+              margin-bottom: 4.91px;
+              width: 20.25px;
+              height: 20.25px;
+            }
+            .title{
+              font-size: 12px;
+              line-height: 129%;
+            }
+          }
+          .value{
+            font-size: 15px;
+            line-height: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 

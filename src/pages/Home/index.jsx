@@ -9,7 +9,9 @@ import { Check } from '../../components/Check';
 import { randomIntFromInterval } from '../../utils/random';
 
 const Home = () => {
-  const labels = new Array(7).fill(null).map((a, index) => `Jul ${18 + index}`);
+  const isMobile = window.innerWidth <= 767.5;
+
+  const labels = new Array(isMobile ? 5 : 7).fill(null).map((a, index) => `Jul ${18 + index}`);
 
   const data = labels.map((x) => randomIntFromInterval(20000, 23000));
 
@@ -99,11 +101,13 @@ const Home = () => {
         <div className={styles.left}>
           <div className={styles.top}>
             <h2>Price Chart</h2>
-            <ChartModesPanel
-              modes={['1h', '3h', '5h', '1d', '1m', '1w']}
-              onClick={() => {}}
-              activeIndex={3}
-            />
+            <div className={styles.modesWrapper} id='c-scrollbar-down-m'>
+              <ChartModesPanel
+                modes={['1h', '3h', '5h', '1d', '1m', '1w']}
+                onClick={() => {}}
+                activeIndex={3}
+              />
+            </div>
           </div>
           <div className={styles.down}>
             <LinearChart data={data} labels={labels} width={495} height={223} />
@@ -112,11 +116,13 @@ const Home = () => {
         <div className={styles.right}>
           <div className={styles.top}>
             <h2>Burned Token Chart</h2>
-            <ChartModesPanel
-              modes={['3y', '5y', '10y', '15y', '20y']}
-              onClick={() => {}}
-              activeIndex={3}
-            />
+            <div className={styles.modesWrapperSecond} id='c-scrollbar-down-m'>
+              <ChartModesPanel
+                modes={['3y', '5y', '10y', '15y', '20y']}
+                onClick={() => {}}
+                activeIndex={isMobile ? 2 : 3}
+              />
+            </div>
           </div>
           <div className={styles.bottom}>
             <div className={styles.ver}>
@@ -127,7 +133,7 @@ const Home = () => {
               <p className={styles.ver__item}>0</p>
             </div>
             <div className={styles.hor}>
-              {Array(9)
+              {Array(isMobile ? 6 : 9)
                 .fill(null)
                 .map((x, i) => `Jul ${15 + i}`)
                 .map((label) => (

@@ -1,19 +1,24 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import styles from './index.module.scss';
 import classNames from 'classnames';
 import { useLocation } from 'react-router';
 import { AppContext } from '../../contexts/AppContext';
 
-const Header = () => {
-  const {pageNames} = useContext(AppContext);
-  const {pathname: location} = useLocation();
+const Header = ({onToggleMenu}) => {
+  const { pageNames } = useContext(AppContext);
+  const { pathname: location } = useLocation();
   const title = pageNames[location];
-
 
   return (
     <header className={styles.root}>
-      <h1 className={styles.title}>{title}</h1>
-      <div className={styles.middle}>
+      <h1 className={styles.title}>
+        <button className={styles.open_mobile} onClick={onToggleMenu}>
+          <img src='./icons/menu-icon-m.svg' alt='open menu' className={styles.icon} />
+        </button>
+        <img src='./images/logo.png' alt='Logotype' className={styles.logo_mobile} />
+        {title}
+      </h1>
+      <div className={styles.middle} id='c-scrollbar-down-m'>
         <div className={styles.middle__block}>
           <img
             src='./icons/dollar-circle.svg'
@@ -41,7 +46,11 @@ const Header = () => {
         </div>
       </div>
       <button className={styles.button}>
-        <img src='./icons/connect-wallet.svg' alt='Connect Wallet icon' className={styles.button__icon} />
+        <img
+          src='./icons/connect-wallet.svg'
+          alt='Connect Wallet icon'
+          className={styles.button__icon}
+        />
         Connect Wallet
       </button>
     </header>

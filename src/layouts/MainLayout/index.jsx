@@ -11,13 +11,14 @@ const MainLayout = () => {
   return (
     <div
       className={classNames(styles.layout, {
-        [styles.layout_sidebarOpened]: !isSidebarOpened,
+        [styles.layout_sidebarOpened]: isSidebarOpened,
       })}>
-      <div className={styles.left}>
+      <div className={styles.left} id='c-scrollbar-1'>
+        <div className={styles.forceScroll}></div>
         <Sidebar isOpened={isSidebarOpened} onToggle={() => setIsSidebarOpened((prev) => !prev)} />
       </div>
       <div className={styles.right}>
-        <Header />
+        <Header onToggleMenu={() => setIsSidebarOpened((prev) => !prev)} />
         <main className={styles.pageContent}>{<Outlet />}</main>
       </div>
     </div>
