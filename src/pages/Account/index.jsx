@@ -8,17 +8,19 @@ import { randomIntFromInterval } from '../../utils/random';
 import { InputButton } from '../../components/InputButton';
 
 const Account = () => {
+  const isMobile = window.innerWidth <= 767.5;
+
   const CIRCLE_CHART_PERCENT = 2.73;
 
   const circleChartParams = `10000 ${273 - CIRCLE_CHART_PERCENT * 48}`;
 
-  const labels = new Array(9).fill(null).map((a, index) => `Jul ${18 + index}`);
+  const labels = new Array(isMobile ? 5 : 9).fill(null).map((a, index) => `Jul ${18 + index}`);
 
   const data = labels.map((x) => randomIntFromInterval(20000, 23000));
 
   const [isSelectExpanded, setIsSelectExpanded] = useState(false);
 
-  const [activeInputMode, setActiveInputMode] = useState(0);
+  const [activeInputMode, setActiveInputMode] = useState(0);     
 
   return (
     <div className={styles.page}>
@@ -103,14 +105,14 @@ const Account = () => {
                 height='99'
                 viewBox='0 0 99 99'
                 fill='none'>
-                <circle cx='49.5' cy='49.5' r='44.5' stroke='#E0E2FE' stroke-width='10' />
+                <circle cx='49.5' cy='49.5' r='44.5' stroke='#E0E2FE' strokeWidth='10' />
                 <circle
                   cx='49.5'
                   cy='49.5'
                   r='43.5'
                   stroke='url(#paint0_linear_261_1287)'
-                  stroke-width='12'
-                  stroke-linecap='round'
+                  strokeWidth='12'
+                  strokeLinecap='round'
                   strokeDasharray={circleChartParams}
                   strokeDashoffset={10000}
                   style={{
@@ -126,8 +128,8 @@ const Account = () => {
                     x2='99.8878'
                     y2='65.3793'
                     gradientUnits='userSpaceOnUse'>
-                    <stop stop-color='#9FA5FD' />
-                    <stop offset='1' stop-color='#303EF5' />
+                    <stop stopColor='#9FA5FD' />
+                    <stop offset='1' stopColor='#303EF5' />
                   </linearGradient>
                 </defs>
               </svg>
@@ -137,14 +139,16 @@ const Account = () => {
         <div className={styles.chart}>
           <div className={styles.top}>
             <h2>Price Chart</h2>
-            <ChartModesPanel
-              modes={['1h', '3h', '5h', '1d', '1m', '1w']}
-              onClick={() => {}}
-              activeIndex={3}
-            />
+            <div className={styles.modesWrapper} id='c-scrollbar-down-m'>
+              <ChartModesPanel
+                modes={['1h', '3h', '5h', '1d', '1m', '1w']}
+                onClick={() => {}}
+                activeIndex={3}
+              />
+            </div>
           </div>
           <div className={styles.down}>
-            <LinearChart data={data} labels={labels} width={672} height={250} fullWidth />
+            <LinearChart data={data} labels={labels} width={isMobile ? 460 : 672} height={isMobile ? 186 : 250} fullWidth={isMobile ? false : true} />
           </div>
         </div>
       </div>
@@ -192,8 +196,12 @@ const Account = () => {
               <input type='text' id='quantity' placeholder='Enter quantity' />
               <div className={styles.options}>
                 {['Day', 'Month'].map((option, i) => (
-                  <div className={styles.option} key={option} >
-                    <InputButton option={option} active={activeInputMode === i} onClick={() => setActiveInputMode(i)} />
+                  <div className={styles.option} key={option}>
+                    <InputButton
+                      option={option}
+                      active={activeInputMode === i}
+                      onClick={() => setActiveInputMode(i)}
+                    />
                   </div>
                 ))}
               </div>

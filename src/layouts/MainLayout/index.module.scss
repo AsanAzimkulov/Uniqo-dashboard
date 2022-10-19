@@ -97,12 +97,39 @@
     display: block;
     width: 100vw;
     overflow-x: hidden;
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 247.5px;
+      height: 299.89px;
+      left: -24px;
+      top: 46.06px;
+      background: linear-gradient(260.93deg, rgba(48, 62, 245, 0.35) 0%, rgba(255, 255, 255, 0.35) 100%);
+      filter: blur(161.554px);
+      border-radius: 32.3134px;
+    }
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 252.67px;
+      height: 312.42px;
+      left: -3.32px;
+      top: 291.92px;
+      background: linear-gradient(260.93deg, rgba(135, 48, 245, 0.25) 0%, rgba(255, 255, 255, 0.25) 100%);
+      filter: blur(161.554px);
+      border-radius: 32.3134px;
+    }
+    
     &_sidebarOpened{
       height: 100vh;
       overflow-y: hidden;
     }
   }
   .right{
+    position: relative;
+    z-index: 1;
     width: 100% !important;
     margin: 0;
     padding: 0;
@@ -113,6 +140,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    z-index: 3;
   }
   .pageContent{
     margin-top: 10px;

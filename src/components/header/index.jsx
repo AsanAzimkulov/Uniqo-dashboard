@@ -3,8 +3,11 @@ import styles from './index.module.scss';
 import classNames from 'classnames';
 import { useLocation } from 'react-router';
 import { AppContext } from '../../contexts/AppContext';
+import { Link } from 'react-router-dom';
 
-const Header = ({onToggleMenu}) => {
+const Header = ({ onToggleMenu }) => {
+  const isMobile = window.innerWidth <= 767.5;
+
   const { pageNames } = useContext(AppContext);
   const { pathname: location } = useLocation();
   const title = pageNames[location];
@@ -15,7 +18,9 @@ const Header = ({onToggleMenu}) => {
         <button className={styles.open_mobile} onClick={onToggleMenu}>
           <img src='./icons/menu-icon-m.svg' alt='open menu' className={styles.icon} />
         </button>
-        <img src='./images/logo.png' alt='Logotype' className={styles.logo_mobile} />
+        <Link to={'/'} className={styles.logo}>
+          <img src='./images/logo.png' alt='Logotype' className={styles.logo_mobile} />
+        </Link>
         {title}
       </h1>
       <div className={styles.middle} id='c-scrollbar-down-m'>
